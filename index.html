@@ -2,18 +2,16 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
 
-    <title>HTML CSS JavaScript Practical Programs</title>
+    <title>Web Technology Practical Programs</title>
+
 
     <style>
-
-        /* =========================
-           RESET
-        ========================= */
 
         * {
             margin: 0;
@@ -22,36 +20,38 @@
         }
 
 
-        /* =========================
-           BODY
-        ========================= */
-
         body {
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
             min-height: 100vh;
+
+            color: white;
 
             background:
                 linear-gradient(
                     135deg,
-                    #06142e,
-                    #0b3b6e,
-                    #183d73,
-                    #28145c
+                    #071426,
+                    #0d3157,
+                    #174b78,
+                    #211b55
                 );
 
-            color: white;
         }
 
 
-        /* =========================
+        /* ==============================
            HEADER
-        ========================= */
+        ============================== */
 
         header {
+
             width: 100%;
 
-            padding: 20px 7%;
+            padding: 20px 6%;
 
             display: flex;
 
@@ -61,41 +61,43 @@
 
             flex-wrap: wrap;
 
-            gap: 15px;
+            gap: 20px;
 
             background:
-                rgba(0, 0, 0, 0.35);
-
-            backdrop-filter: blur(12px);
+                rgba(0, 0, 0, 0.30);
 
             border-bottom:
-                1px solid rgba(255,255,255,0.15);
+                1px solid
+                rgba(255,255,255,0.15);
+
+            backdrop-filter:
+                blur(12px);
+
         }
 
 
         .logo {
+
             font-size: 24px;
 
             font-weight: bold;
 
-            color: white;
         }
 
 
-        /* =========================
-           NAVIGATION
-        ========================= */
-
         nav {
+
             display: flex;
 
             gap: 20px;
 
             flex-wrap: wrap;
+
         }
 
 
         nav a {
+
             color: white;
 
             text-decoration: none;
@@ -103,270 +105,512 @@
             font-weight: bold;
 
             transition: 0.3s;
+
         }
 
 
         nav a:hover {
+
             color: #38bdf8;
+
         }
 
 
-        /* =========================
+        /* ==============================
            HERO
-        ========================= */
+        ============================== */
 
         .hero {
+
             text-align: center;
 
             padding:
-                80px 20px 50px;
+                65px 20px 40px;
+
+        }
+
+
+        .hero-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 10px;
+
         }
 
 
         .hero h1 {
+
             font-size:
-                clamp(38px, 6vw, 70px);
+                clamp(
+                    38px,
+                    6vw,
+                    68px
+                );
 
-            line-height: 1.1;
+            margin-bottom: 15px;
 
-            margin-bottom: 25px;
         }
 
 
         .hero h1 span {
+
             color: #38bdf8;
+
         }
 
 
         .hero p {
+
             max-width: 800px;
 
-            margin: auto;
-
-            font-size: 18px;
+            margin:
+                0 auto 25px;
 
             line-height: 1.7;
 
             color: #dbeafe;
+
+            font-size: 17px;
+
         }
 
 
-        /* =========================
-           CONTAINER
-        ========================= */
+        /* ==============================
+           PROGRAM COUNTERS
+        ============================== */
+
+        .stats {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .stat {
+
+            padding:
+                13px 22px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.15);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            font-weight: bold;
+
+        }
+
+
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
 
         .container {
-            width: 90%;
 
-            max-width: 1250px;
+            width: 92%;
+
+            max-width: 1400px;
 
             margin: auto;
+
         }
 
 
-        /* =========================
-           MAIN CARDS
-        ========================= */
+        /* ==============================
+           SEARCH AREA
+        ============================== */
 
-        .cards {
+        .search-area {
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr;
+
+            gap: 15px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .search-area input,
+        .search-area select {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            outline: none;
+
+            border-radius: 12px;
+
+            font-size: 16px;
+
+        }
+
+
+        /* ==============================
+           SECTION
+        ============================== */
+
+        .section {
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .section-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-title h2 {
+
+            font-size: 30px;
+
+        }
+
+
+        .section-title span {
+
+            font-size: 32px;
+
+        }
+
+
+        /* ==============================
+           PROGRAM GRID
+        ============================== */
+
+        .program-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(190px, 1fr)
+                );
+
+            gap: 16px;
+
+        }
+
+
+        .program-card {
+
+            display: block;
+
+            min-height: 115px;
+
+            padding: 18px;
+
+            border-radius: 15px;
+
+            color: white;
+
+            text-decoration: none;
+
+            background:
+                rgba(255,255,255,0.11);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            transition:
+                0.3s;
+
+        }
+
+
+        .program-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            background:
+                rgba(255,255,255,0.18);
+
+            box-shadow:
+                0 15px 30px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        .number {
+
+            font-size: 13px;
+
+            color: #93c5fd;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .program-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .file {
+
+            font-size: 12px;
+
+            color: #cbd5e1;
+
+            word-break: break-word;
+
+        }
+
+
+        /* ==============================
+           MAIN THREE BUTTONS
+        ============================== */
+
+        .main-cards {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 30px;
+            gap: 25px;
 
-            margin-bottom: 70px;
+            margin-bottom: 60px;
+
         }
 
 
-        .card {
-            padding: 35px 25px;
+        .main-card {
 
             text-align: center;
+
+            padding: 35px 25px;
 
             border-radius: 22px;
 
             background:
-                rgba(255,255,255,0.12);
+                rgba(255,255,255,0.11);
 
             border:
-                1px solid rgba(255,255,255,0.20);
+                1px solid
+                rgba(255,255,255,0.17);
 
-            backdrop-filter: blur(12px);
+            transition: 0.3s;
 
-            box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.25);
-
-            transition:
-                transform 0.3s,
-                box-shadow 0.3s;
         }
 
 
-        .card:hover {
+        .main-card:hover {
+
             transform:
-                translateY(-10px);
+                translateY(-8px);
 
-            box-shadow:
-                0 25px 50px
-                rgba(0,0,0,0.4);
+            background:
+                rgba(255,255,255,0.17);
+
         }
 
 
-        .icon {
-            font-size: 60px;
+        .main-card .icon {
 
-            margin-bottom: 20px;
-        }
-
-
-        .card h2 {
-            font-size: 28px;
+            font-size: 55px;
 
             margin-bottom: 15px;
+
         }
 
 
-        .card p {
+        .main-card h2 {
+
+            font-size: 27px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .main-card p {
+
             color: #dbeafe;
 
-            line-height: 1.7;
+            line-height: 1.6;
 
-            margin-bottom: 25px;
+            margin-bottom: 22px;
+
         }
 
 
-        /* =========================
-           BUTTON
-        ========================= */
-
         .button {
+
             display: inline-block;
 
             padding:
-                13px 25px;
+                13px 22px;
 
             border-radius: 10px;
+
+            color: white;
 
             text-decoration: none;
 
             font-weight: bold;
 
-            color: white;
-
-            background: #0ea5e9;
-
             transition: 0.3s;
+
         }
 
 
-        .button:hover {
-            transform:
-                translateY(-3px);
+        .html-button {
+
+            background: #0ea5e9;
+
+        }
+
+
+        .html-button:hover {
 
             background: #38bdf8;
 
-            color: #06203b;
+            color: #082f49;
+
         }
 
 
         .css-button {
+
             background: #8b5cf6;
+
         }
 
 
         .css-button:hover {
+
             background: #a78bfa;
+
+            color: #24104f;
+
         }
 
 
-        .javascript-button {
+        .js-button {
+
             background: #f59e0b;
+
         }
 
 
-        .javascript-button:hover {
+        .js-button:hover {
+
             background: #facc15;
 
             color: #422006;
+
         }
 
 
-        /* =========================
-           JAVASCRIPT SECTION TITLE
-        ========================= */
+        /* ==============================
+           JAVASCRIPT CATEGORY CARDS
+        ============================== */
 
-        .section-title {
-            text-align: center;
+        .js-section-grid {
 
-            margin-bottom: 30px;
-        }
-
-
-        .section-title h2 {
-            font-size: 34px;
-        }
-
-
-        .section-title p {
-            color: #cbd5e1;
-
-            margin-top: 10px;
-        }
-
-
-        /* =========================
-           JAVASCRIPT SECTION CARDS
-        ========================= */
-
-        .js-sections {
             display: grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
 
-            gap: 20px;
+            gap: 18px;
 
-            margin-bottom: 80px;
         }
 
 
-        .js-box {
-            padding: 25px;
+        .js-section-card {
 
-            text-align: center;
+            padding: 24px;
 
             border-radius: 18px;
+
+            text-align: center;
 
             background:
                 rgba(255,255,255,0.09);
 
             border:
-                1px solid rgba(255,255,255,0.15);
+                1px solid
+                rgba(255,255,255,0.14);
 
             transition: 0.3s;
+
         }
 
 
-        .js-box:hover {
+        .js-section-card:hover {
+
             transform:
-                translateY(-7px);
+                translateY(-6px);
 
             background:
                 rgba(255,255,255,0.15);
+
         }
 
 
-        .js-box h3 {
-            font-size: 19px;
+        .js-section-card .icon {
 
-            margin-bottom: 15px;
+            font-size: 35px;
+
+            margin-bottom: 12px;
+
         }
 
 
-        .js-box p {
+        .js-section-card h3 {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .js-section-card p {
+
             color: #cbd5e1;
 
             font-size: 14px;
@@ -374,62 +618,71 @@
             line-height: 1.5;
 
             margin-bottom: 15px;
+
         }
 
 
-        .js-box a {
+        .js-section-card a {
+
             color: #7dd3fc;
 
             text-decoration: none;
 
             font-weight: bold;
+
         }
 
 
-        .js-box a:hover {
+        .js-section-card a:hover {
+
             color: white;
 
             text-decoration: underline;
+
         }
 
 
-        /* =========================
+        /* ==============================
            FOOTER
-        ========================= */
+        ============================== */
 
         footer {
-            text-align: center;
+
+            margin-top: 70px;
 
             padding: 35px 20px;
 
-            background:
-                rgba(0,0,0,0.4);
+            text-align: center;
 
-            border-top:
-                1px solid
-                rgba(255,255,255,0.1);
+            background:
+                rgba(0,0,0,0.35);
 
             color: #cbd5e1;
 
             line-height: 1.8;
+
         }
 
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        /* ==============================
+           MOBILE
+        ============================== */
 
-        @media (max-width: 1000px) {
+        @media (max-width: 900px) {
 
-            .cards {
+            .main-cards {
+
                 grid-template-columns:
                     1fr;
+
             }
 
 
-            .js-sections {
+            .search-area {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    1fr;
+
             }
 
         }
@@ -438,37 +691,46 @@
         @media (max-width: 600px) {
 
             header {
-                justify-content:
-                    center;
 
-                text-align: center;
+                justify-content: center;
+
             }
 
 
             nav {
-                justify-content:
-                    center;
+
+                justify-content: center;
+
             }
 
 
             .hero {
-                padding-top: 50px;
+
+                padding-top: 40px;
+
             }
 
 
             .hero h1 {
+
                 font-size: 40px;
+
             }
 
 
-            .js-sections {
-                grid-template-columns:
-                    1fr;
+            .stats {
+
+                flex-direction: column;
+
             }
 
 
-            .card {
-                padding: 30px 20px;
+            .stat {
+
+                width: 100%;
+
+                text-align: center;
+
             }
 
         }
@@ -481,38 +743,39 @@
 <body>
 
 
-<!-- ==========================================
+<!-- =========================================
      HEADER
-========================================== -->
+========================================= -->
 
 <header>
 
     <div class="logo">
-        💻 Practical Programs
+        🌐 Web Technology
     </div>
 
 
     <nav>
 
-        <!-- IMPORTANT:
-             These folder names are uppercase -->
-
         <a href="index.html">
             Home
         </a>
 
+        <!-- CORRECT HTML FOLDER -->
 
-        <a href="HTML/index.html">
+        <a href="html/index.html">
             HTML
         </a>
 
+        <!-- CORRECT CSS FOLDER -->
 
-        <a href="CSS/index.html">
+        <a href="css/index.html">
             CSS
         </a>
 
+        <!-- JavaScript sections are
+             directly in root -->
 
-        <a href="JAVASCRIPT/index.html">
+        <a href="basics/index.html">
             JavaScript
         </a>
 
@@ -522,56 +785,122 @@
 
 
 
-<!-- ==========================================
+<!-- =========================================
      HERO
-========================================== -->
+========================================= -->
 
 <section class="hero">
 
+    <div class="hero-icon">
+        🌐
+    </div>
+
+
     <h1>
 
-        HTML
-        <span>CSS</span>
-        JavaScript
-
-        <br>
-
-        Practical Programs
+        Web
+        <span>Technology</span>
 
     </h1>
 
 
     <p>
 
-        Welcome to the complete Web Technologies
-        Practical Programs website.
-
-        Select HTML, CSS or JavaScript to view
-        the programs and experiments.
+        Complete HTML • CSS • JavaScript
+        Practical Programs
 
     </p>
+
+
+
+    <!-- PROGRAM COUNTERS -->
+
+    <div class="stats">
+
+        <div class="stat">
+            331 Programs
+        </div>
+
+
+        <div class="stat">
+            HTML: 15
+        </div>
+
+
+        <div class="stat">
+            CSS: 75
+        </div>
+
+
+        <div class="stat">
+            JavaScript: 241
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ==========================================
-     MAIN
-========================================== -->
+<!-- =========================================
+     MAIN CONTAINER
+========================================= -->
 
 <main class="container">
 
 
-    <!-- ======================================
+
+    <!-- =====================================
+         SEARCH
+    ====================================== -->
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="🔎 Search program name or file..."
+            onkeyup="searchPrograms()"
+        >
+
+
+        <select
+            id="category"
+            onchange="filterCategory()"
+        >
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="html">
+                HTML
+            </option>
+
+            <option value="css">
+                CSS
+            </option>
+
+            <option value="javascript">
+                JavaScript
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- =====================================
          THREE MAIN CARDS
-    ======================================= -->
+    ====================================== -->
 
-    <section class="cards">
+    <section class="main-cards">
 
 
-        <!-- HTML -->
+        <!-- ================= HTML ================= -->
 
-        <div class="card">
+        <div class="main-card">
 
             <div class="icon">
                 🌐
@@ -585,19 +914,22 @@
 
             <p>
 
-                HTML fundamentals, headings,
-                paragraphs, tables, forms,
-                multimedia, semantic elements
+                HTML fundamentals,
+                headings, paragraphs,
+                tables, forms,
+                multimedia,
+                semantic elements
                 and more.
 
             </p>
 
 
-            <!-- CORRECT PATH -->
+            <!-- EXACT PATH -->
 
             <a
-                href="HTML/index.html"
-                class="button">
+                href="html/index.html"
+                class="button html-button"
+            >
 
                 View HTML Programs
 
@@ -607,9 +939,9 @@
 
 
 
-        <!-- CSS -->
+        <!-- ================= CSS ================= -->
 
-        <div class="card">
+        <div class="main-card">
 
             <div class="icon">
                 🎨
@@ -623,18 +955,22 @@
 
             <p>
 
-                CSS selectors, colors, layouts,
-                Flexbox, Grid, animations,
-                responsive design and more.
+                CSS selectors,
+                colors, layouts,
+                Flexbox, Grid,
+                animations,
+                responsive design
+                and more.
 
             </p>
 
 
-            <!-- CORRECT PATH -->
+            <!-- EXACT PATH -->
 
             <a
-                href="CSS/index.html"
-                class="button css-button">
+                href="css/index.html"
+                class="button css-button"
+            >
 
                 View CSS Programs
 
@@ -644,9 +980,9 @@
 
 
 
-        <!-- JAVASCRIPT -->
+        <!-- ================= JAVASCRIPT ================= -->
 
-        <div class="card">
+        <div class="main-card">
 
             <div class="icon">
                 ⚡
@@ -660,18 +996,25 @@
 
             <p>
 
-                JavaScript basics, DOM manipulation,
-                events, forms, browser features,
-                storage and mini projects.
+                JavaScript basics,
+                DOM manipulation,
+                events, forms,
+                browser features,
+                storage and
+                mini projects.
 
             </p>
 
 
-            <!-- CORRECT PATH -->
+            <!-- IMPORTANT:
+                 There is NO javascript folder.
+                 JavaScript folders are directly
+                 in the root. -->
 
             <a
-                href="JAVASCRIPT/index.html"
-                class="button javascript-button">
+                href="basics/index.html"
+                class="button js-button"
+            >
 
                 View JavaScript Programs
 
@@ -679,259 +1022,281 @@
 
         </div>
 
+
     </section>
 
 
 
-    <!-- ======================================
-         JAVASCRIPT SECTIONS
-    ======================================= -->
+    <!-- =====================================
+         HTML PROGRAMS QUICK ACCESS
+    ====================================== -->
 
-    <section>
+    <section class="section">
 
         <div class="section-title">
 
+            <span>🌐</span>
+
             <h2>
-                JavaScript Practical Sections
+                HTML Programs
             </h2>
 
-
-            <p>
-                Select a section to view its programs.
-            </p>
-
         </div>
 
 
-
-        <div class="js-sections">
-
-
-            <!-- BASICS -->
-
-            <div class="js-box">
-
-                <h3>
-                    📘 JavaScript Basics
-                </h3>
-
-                <p>
-                    Basic JavaScript programs
-                    and programming concepts.
-                </p>
+        <div class="program-grid">
 
 
-                <a href="JAVASCRIPT/basics/index.html">
+            <a
+                href="html/html-01.html"
+                class="program-card"
+            >
 
-                    Open Programs →
-
-                </a>
-
-            </div>
-
-
-
-            <!-- DOM -->
-
-            <div class="js-box">
+                <div class="number">
+                    Program 1
+                </div>
 
                 <h3>
-                    🧩 DOM Manipulation
+                    HTML 01
                 </h3>
 
-                <p>
-                    Dynamic HTML and DOM
-                    manipulation programs.
-                </p>
+                <div class="file">
+                    html/html-01.html
+                </div>
 
-
-                <a href="JAVASCRIPT/dom/index.html">
-
-                    Open Programs →
-
-                </a>
-
-            </div>
+            </a>
 
 
 
-            <!-- EVENTS -->
+            <a
+                href="html/html-02.html"
+                class="program-card"
+            >
 
-            <div class="js-box">
+                <div class="number">
+                    Program 2
+                </div>
 
                 <h3>
-                    🖱️ JavaScript Events
+                    HTML 02
                 </h3>
 
-                <p>
-                    Mouse, keyboard and
-                    event listener programs.
-                </p>
+                <div class="file">
+                    html/html-02.html
+                </div>
 
-
-                <a href="JAVASCRIPT/events/index.html">
-
-                    Open Programs →
-
-                </a>
-
-            </div>
+            </a>
 
 
 
-            <!-- FORMS -->
+            <a
+                href="html/html-03.html"
+                class="program-card"
+            >
 
-            <div class="js-box">
+                <div class="number">
+                    Program 3
+                </div>
 
                 <h3>
-                    📝 Forms & Validation
+                    HTML 03
                 </h3>
 
-                <p>
-                    Forms, validation and
-                    regular expression programs.
-                </p>
+                <div class="file">
+                    html/html-03.html
+                </div>
 
-
-                <a href="JAVASCRIPT/forms/index.html">
-
-                    Open Programs →
-
-                </a>
-
-            </div>
+            </a>
 
 
 
-            <!-- BROWSER -->
+            <a
+                href="html/html-04.html"
+                class="program-card"
+            >
 
-            <div class="js-box">
+                <div class="number">
+                    Program 4
+                </div>
 
                 <h3>
-                    🌐 Browser Features
+                    HTML 04
                 </h3>
 
-                <p>
-                    Window, Navigator,
-                    Location and History.
-                </p>
+                <div class="file">
+                    html/html-04.html
+                </div>
 
-
-                <a href="JAVASCRIPT/browser/index.html">
-
-                    Open Programs →
-
-                </a>
-
-            </div>
+            </a>
 
 
 
-            <!-- STORAGE -->
+            <a
+                href="html/html-05.html"
+                class="program-card"
+            >
 
-            <div class="js-box">
+                <div class="number">
+                    Program 5
+                </div>
 
                 <h3>
-                    💾 Web Storage
+                    HTML 05
                 </h3>
 
-                <p>
-                    localStorage and
-                    sessionStorage programs.
-                </p>
+                <div class="file">
+                    html/html-05.html
+                </div>
 
-
-                <a href="JAVASCRIPT/storage/index.html">
-
-                    Open Programs →
-
-                </a>
-
-            </div>
+            </a>
 
 
 
-            <!-- MINI PROJECTS -->
+            <a
+                href="html/html-06.html"
+                class="program-card"
+            >
 
-            <div class="js-box">
+                <div class="number">
+                    Program 6
+                </div>
 
                 <h3>
-                    🚀 Mini Projects
+                    HTML 06
                 </h3>
 
-                <p>
-                    Calculator, clock, games,
-                    todo list and more.
-                </p>
+                <div class="file">
+                    html/html-06.html
+                </div>
 
-
-                <a href="JAVASCRIPT/mini-projects/index.html">
-
-                    Open Projects →
-
-                </a>
-
-            </div>
+            </a>
 
 
 
-            <!-- ADVANCED -->
+            <a
+                href="html/html-07.html"
+                class="program-card"
+            >
 
-            <div class="js-box">
+                <div class="number">
+                    Program 7
+                </div>
 
                 <h3>
-                    ⚙️ Advanced JavaScript
+                    HTML 07
                 </h3>
 
-                <p>
-                    ES6, classes, promises,
-                    Fetch API and advanced concepts.
-                </p>
+                <div class="file">
+                    html/html-07.html
+                </div>
 
-
-                <a href="JAVASCRIPT/advanced/index.html">
-
-                    Open Programs →
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-</main>
+            </a>
 
 
 
-<!-- ==========================================
-     FOOTER
-========================================== -->
+            <a
+                href="html/html-08.html"
+                class="program-card"
+            >
 
-<footer>
+                <div class="number">
+                    Program 8
+                </div>
 
-    <p>
-        <strong>
-            HTML • CSS • JavaScript Practical Programs
-        </strong>
-    </p>
+                <h3>
+                    HTML 08
+                </h3>
 
+                <div class="file">
+                    html/html-08.html
+                </div>
 
-    <p>
-        Web Technologies Practical Assignment
-    </p>
-
-
-    <p>
-        © 2026 Practical Programs
-    </p>
-
-</footer>
+            </a>
 
 
-</body>
 
-</html>
+            <a
+                href="html/html-09.html"
+                class="program-card"
+            >
+
+                <div class="number">
+                    Program 9
+                </div>
+
+                <h3>
+                    HTML 09
+                </h3>
+
+                <div class="file">
+                    html/html-09.html
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="html/html-10.html"
+                class="program-card"
+            >
+
+                <div class="number">
+                    Program 10
+                </div>
+
+                <h3>
+                    HTML 10
+                </h3>
+
+                <div class="file">
+                    html/html-10.html
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="html/html-11.html"
+                class="program-card"
+            >
+
+                <div class="number">
+                    Program 11
+                </div>
+
+                <h3>
+                    HTML 11
+                </h3>
+
+                <div class="file">
+                    html/html-11.html
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="html/html-12.html"
+                class="program-card"
+            >
+
+                <div class="number">
+                    Program 12
+                </div>
+
+                <h3>
+                    HTML 12
+                </h3>
+
+                <div class="file">
+                    html/html-12.html
+                </div>
+
+            </a>
+
+
+
+            <a
