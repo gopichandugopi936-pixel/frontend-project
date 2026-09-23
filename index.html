@@ -1,511 +1,487 @@
-.1<!DOCTYPE html>
+.<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Web Technology Practical Programs</title>
+    <title>HTML CSS JavaScript Practical Programs</title>
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
-    color: white;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
+            color: white;
+            min-height: 100vh;
+        }
 
-header {
-    text-align: center;
-    padding: 50px 20px 30px;
-}
+        header {
+            background: rgba(0, 0, 0, 0.35);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-header h1 {
-    font-size: clamp(30px, 5vw, 52px);
-    margin-bottom: 10px;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-header p {
-    color: #dbeafe;
-    font-size: 17px;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
 
-.container {
-    width: min(1200px, 94%);
-    margin: auto;
-    padding-bottom: 50px;
-}
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin: 20px 0 30px;
-}
+        .hero {
+            text-align: center;
+            padding: 80px 20px 50px;
+        }
 
-.stat {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 12px 20px;
-    border-radius: 14px;
-}
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            margin-bottom: 20px;
+        }
 
-.toolbar {
-    position: sticky;
-    top: 10px;
-    z-index: 5;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    background: rgba(15,23,42,0.9);
-    padding: 14px;
-    border-radius: 16px;
-    margin-bottom: 30px;
-}
+        .hero h1 span {
+            color: #38bdf8;
+        }
 
-input,
-select {
-    flex: 1;
-    min-width: 220px;
-    padding: 13px 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-}
+        .hero p {
+            font-size: 18px;
+            color: #dbeafe;
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+        }
 
-.section {
-    margin: 30px 0;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255,255,255,0.2);
-}
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 30px auto 70px;
+        }
 
-.group {
-    margin: 18px 0;
-}
+        .card {
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
 
-.group h3 {
-    font-size: 19px;
-    color: #bfdbfe;
-    margin-bottom: 12px;
-}
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 12px;
-}
+        .icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
 
-.card {
-    display: block;
-    text-decoration: none;
-    color: white;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 13px;
-    padding: 16px;
-    transition: 0.2s;
-}
+        .card h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
 
-.card:hover {
-    transform: translateY(-3px);
-    background: rgba(255,255,255,0.18);
-}
+        .card p {
+            color: #dbeafe;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
 
-.number {
-    font-size: 12px;
-    color: #93c5fd;
-    margin-bottom: 7px;
-}
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            background: #2563eb;
+            transition: 0.3s;
+        }
 
-.name {
-    font-weight: bold;
-    font-size: 15px;
-}
+        .button:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
 
-.path {
-    font-size: 11px;
-    color: #cbd5e1;
-    margin-top: 8px;
-    word-break: break-all;
-}
+        .javascript-button {
+            background: #f59e0b;
+        }
 
-.empty {
-    display: none;
-    text-align: center;
-    padding: 40px;
-    color: #cbd5e1;
-}
+        .javascript-button:hover {
+            background: #facc15;
+        }
 
-footer {
-    text-align: center;
-    color: #cbd5e1;
-    padding: 25px;
-}
-</style>
+        .css-button {
+            background: #7c3aed;
+        }
+
+        .css-button:hover {
+            background: #a78bfa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 50px 0 25px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+        }
+
+        .js-sections {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 70px;
+        }
+
+        .js-box {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 22px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .js-box h3 {
+            margin-bottom: 12px;
+        }
+
+        .js-box a {
+            color: #7dd3fc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .js-box a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            padding: 30px 15px;
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .js-sections {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .js-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-    <h1>🌐 Web Technology</h1>
-    <p>Complete HTML • CSS • JavaScript Practical Programs</p>
+
+    <div class="logo">
+        💻 Practical Programs
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="html/index.html">HTML</a>
+        <a href="css/index.html">CSS</a>
+        <a href="javascript/index.html">JavaScript</a>
+    </nav>
+
 </header>
 
-<div class="container">
 
-    <div class="stats">
-        <div class="stat">
-            <b id="total">0</b> Programs
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <h1>
+        HTML <span>CSS</span> JavaScript
+        <br>
+        Practical Programs
+    </h1>
+
+    <p>
+        Welcome to the complete Web Technologies Practical Programs
+        website. Select HTML, CSS or JavaScript to view the programs
+        and experiments.
+    </p>
+
+</section>
+
+
+<!-- ================= MAIN CARDS ================= -->
+
+<main class="container">
+
+    <div class="cards">
+
+        <!-- HTML CARD -->
+
+        <div class="card">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <h2>HTML Programs</h2>
+
+            <p>
+                HTML fundamentals, headings, paragraphs, tables,
+                forms, multimedia, semantic elements and more.
+            </p>
+
+            <a
+                href="html/index.html"
+                class="button"
+            >
+                View HTML Programs
+            </a>
+
         </div>
 
-        <div class="stat">
-            HTML: <b id="htmlCount">0</b>
+
+        <!-- CSS CARD -->
+
+        <div class="card">
+
+            <div class="icon">
+                🎨
+            </div>
+
+            <h2>CSS Programs</h2>
+
+            <p>
+                CSS selectors, colors, layouts, Flexbox, Grid,
+                animations, responsive design and more.
+            </p>
+
+            <a
+                href="css/index.html"
+                class="button css-button"
+            >
+                View CSS Programs
+            </a>
+
         </div>
 
-        <div class="stat">
-            CSS: <b id="cssCount">0</b>
+
+        <!-- JAVASCRIPT CARD -->
+
+        <div class="card">
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h2>JavaScript Programs</h2>
+
+            <p>
+                JavaScript basics, DOM manipulation, events,
+                forms, browser features, storage and mini projects.
+            </p>
+
+            <a
+                href="javascript/index.html"
+                class="button javascript-button"
+            >
+                View JavaScript Programs
+            </a>
+
         </div>
 
-        <div class="stat">
-            JavaScript: <b id="jsCount">0</b>
-        </div>
     </div>
 
-    <div class="toolbar">
 
-        <input
-            id="search"
-            type="search"
-            placeholder="🔎 Search program..."
-        >
+    <!-- ================= JAVASCRIPT SECTIONS ================= -->
 
-        <select id="category">
+    <div class="section-title">
 
-            <option value="all">
-                All Categories
-            </option>
-
-            <option value="HTML">
-                HTML
-            </option>
-
-            <option value="CSS">
-                CSS
-            </option>
-
-            <option value="JavaScript">
-                JavaScript
-            </option>
-
-        </select>
+        <h2>
+            JavaScript Practical Sections
+        </h2>
 
     </div>
 
-    <div id="content"></div>
 
-    <div id="empty" class="empty">
-        No programs found.
+    <div class="js-sections">
+
+
+        <!-- BASIC JAVASCRIPT -->
+
+        <div class="js-box">
+
+            <h3>📘 JavaScript Basics</h3>
+
+            <a href="basics/index.html">
+                Open Programs →
+            </a>
+
+        </div>
+
+
+        <!-- DOM -->
+
+        <div class="js-box">
+
+            <h3>🧩 DOM Manipulation</h3>
+
+            <a href="dom/index.html">
+                Open Programs →
+            </a>
+
+        </div>
+
+
+        <!-- EVENTS -->
+
+        <div class="js-box">
+
+            <h3>🖱️ JavaScript Events</h3>
+
+            <a href="events/index.html">
+                Open Programs →
+            </a>
+
+        </div>
+
+
+        <!-- FORMS -->
+
+        <div class="js-box">
+
+            <h3>📝 Forms & Validation</h3>
+
+            <a href="forms/index.html">
+                Open Programs →
+            </a>
+
+        </div>
+
+
+        <!-- BROWSER -->
+
+        <div class="js-box">
+
+            <h3>🌐 Browser Features</h3>
+
+            <a href="browser/index.html">
+                Open Programs →
+            </a>
+
+        </div>
+
+
+        <!-- STORAGE -->
+
+        <div class="js-box">
+
+            <h3>💾 Web Storage</h3>
+
+            <a href="storage/index.html">
+                Open Programs →
+            </a>
+
+        </div>
+
+
+        <!-- MINI PROJECTS -->
+
+        <div class="js-box">
+
+            <h3>🚀 Mini Projects</h3>
+
+            <a href="mini-projects/index.html">
+                Open Projects →
+            </a>
+
+        </div>
+
+
+        <!-- ADVANCED -->
+
+        <div class="js-box">
+
+            <h3>⚙️ Advanced JavaScript</h3>
+
+            <a href="advanced/index.html">
+                Open Programs →
+            </a>
+
+        </div>
+
     </div>
 
-</div>
+</main>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    Web Technology Practical Programs
+
+    <p>
+        HTML • CSS • JavaScript Practical Programs
+    </p>
+
+    <p>
+        Designed for Web Technologies Practical Assignment
+    </p>
+
 </footer>
 
 
-<script>
-
-/* ============================
-   PROGRAM FILES
-============================ */
-
-const programs = [
-
-    /* =========================
-       HTML
-    ========================= */
-
-    {
-        path: "html/html-01.html",
-        title: "HTML Program 01",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-02.html",
-        title: "HTML Program 02",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-03.html",
-        title: "HTML Program 03",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-04.html",
-        title: "HTML Program 04",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-05.html",
-        title: "HTML Program 05",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-06.html",
-        title: "HTML Program 06",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-07.html",
-        title: "HTML Program 07",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-08.html",
-        title: "HTML Program 08",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-09.html",
-        title: "HTML Program 09",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-10.html",
-        title: "HTML Program 10",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-11.html",
-        title: "HTML Program 11",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-12.html",
-        title: "HTML Program 12",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-13.html",
-        title: "HTML Program 13",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-14.html",
-        title: "HTML Program 14",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-    {
-        path: "html/html-15.html",
-        title: "HTML Program 15",
-        category: "HTML",
-        group: "HTML Programs"
-    },
-
-
-    /* =========================
-       CSS
-    ========================= */
-
-    {
-        path: "css-programs/css-01.html",
-        title: "CSS Program 01",
-        category: "CSS",
-        group: "CSS Programs"
-    },
-
-    {
-        path: "css-programs/css-02.html",
-        title: "CSS Program 02",
-        category: "CSS",
-        group: "CSS Programs"
-    },
-
-    {
-        path: "css-programs/css-03.html",
-        title: "CSS Program 03",
-        category: "CSS",
-        group: "CSS Programs"
-    },
-
-    {
-        path: "css-programs/css-04.html",
-        title: "CSS Program 04",
-        category: "CSS",
-        group: "CSS Programs"
-    },
-
-    {
-        path: "css-programs/css-05.html",
-        title: "CSS Program 05",
-        category: "CSS",
-        group: "CSS Programs"
-    }
-
-];
-
-
-/* ============================
-   ADD CSS 06 - 75 AUTOMATICALLY
-============================ */
-
-for (let i = 6; i <= 75; i++) {
-
-    let number = String(i).padStart(2, "0");
-
-    programs.push({
-
-        path: `css-programs/css-${number}.html`,
-
-        title: `CSS Program ${number}`,
-
-        category: "CSS",
-
-        group: "CSS Programs"
-
-    });
-
-}
-
-
-/* ============================
-   JAVASCRIPT PROGRAM FOLDERS
-============================ */
-
-const jsFolders = [
-
-    {
-        folder: "basics",
-        name: "Basics"
-    },
-
-    {
-        folder: "browser",
-        name: "Browser"
-    },
-
-    {
-        folder: "dom",
-        name: "DOM"
-    },
-
-    {
-        folder: "events",
-        name: "Events"
-    },
-
-    {
-        folder: "forms",
-        name: "Forms"
-    },
-
-    {
-        folder: "mini-projects",
-        name: "Mini Projects"
-    },
-
-    {
-        folder: "storage",
-        name: "Storage"
-    }
-
-];
-
-
-/*
-IMPORTANT:
-
-The JavaScript folders are directly
-inside the GitHub repository.
-
-NOT:
-
-JAVASCRIPT/basics/
-
-Instead:
-
-basics/
-browser/
-dom/
-events/
-forms/
-mini-projects/
-storage/
-*/
-
-
-/* ============================
-   ADD JAVASCRIPT FILES
-============================ */
-
-const jsFiles = [
-
-    /* BASICS */
-
-    ["basics", "basic-01.html"],
-    ["basics", "basic-02.html"],
-    ["basics", "basic-03.html"],
-    ["basics", "basic-04.html"],
-    ["basics", "basic-05.html"],
-    ["basics", "basic-06.html"],
-    ["basics", "basic-07.html"],
-    ["basics", "basic-08.html"],
-    ["basics", "basic-09.html"],
-    ["basics", "basic-10.html"],
-
-    /* BROWSER */
-
-    ["browser", "browser-01-alert.html"],
-    ["browser", "browser-02-confirm.html"],
-    ["browser", "browser-03-prompt.html"],
-
-    /* DOM */
-
-    ["dom", "dom-01-getelementbyid.html"],
-    ["dom", "dom-02-queryselector.html"],
-    ["dom", "dom-03-create-element.html"],
-
-    /* EVENTS */
-
-    ["events", "event-01-click.html"],
-    ["events", "event-02-mouseover.html"],
+</body>
+</html>
